@@ -392,7 +392,7 @@
         @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                 @auth
-                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                    <a href="{{ route('home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                 @else
                     <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
                     
@@ -413,21 +413,26 @@
                 </svg>
             </div>
             
-           @guest
+            @guest
                 <div class="flex justify-center mt-4 sm:items-center">
-                <div class="text-center text-sm text-gray-500 sm:text-left">
-                    <div class="flex items-center">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <a href="{{route('oauth.redirect', ['provider'=>'github'])}}" class="ml-1 btn btn-success">
-                                <i class="bi bi-github"></i> Sign Up With Github
-                            </a>
-                        </form>
+                    <div class="text-center text-sm text-gray-500 sm:text-left">
+                        <div class="flex items-center">
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
+                                <a href="{{route('oauth.redirect', ['provider'=>'github'])}}" class="ml-1 btn btn-success">
+                                    <i class="bi bi-github"></i> Sign Up With Github
+                                </a>
+                            </form>
+                        </div>
+                         @if (session('error'))
+                                <div class="text-danger mt-2">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
                     </div>
                 </div>
-            </div>
-           @endguest
-           
+            @endguest
+        
         </div>
     </div>
 </body>
