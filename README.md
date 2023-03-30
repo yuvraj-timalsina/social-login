@@ -10,7 +10,7 @@
 Clone the project using SSH or HTTPS.
 
 ```bash
-  git@github.com:yuvraj-timalsina/social-login.git
+git@github.com:yuvraj-timalsina/social-login.git
 ```
     
 ## Run Locally
@@ -18,53 +18,53 @@ Clone the project using SSH or HTTPS.
 Go to the Project Directory
 
 ```bash
-  cd social-login
+cd social-login
 ```
 Create and Configure the Database
 
 ```bash
-  sudo mysql -u <username> -p
-  create database social_login;
+sudo mysql -u <username> -p
+create database social_login;
 ```
 Install Dependencies
 
 ```bash
-  composer install
+composer install
 ```
 
 Generate Application Key
 
 ```bash
-  php artisan key:generate
+php artisan key:generate
 ```
 
 Run the Database Migrations
 
 ```bash
-  php artisan migrate
+php artisan migrate
 ```
 
 Run the Server
 
 ```bash
-  php artisan serve
+php artisan serve
   
-  http://127.0.0.1:8000
+http://127.0.0.1:8000
 ```
 
 
 ## Creating OAuth App (Links)
 GitHub
 ```bash
-  https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
+https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
 ```
 Facebook
 ```bash
-  https://developers.facebook.com/docs/development/create-an-app
+https://developers.facebook.com/docs/development/create-an-app
 ```
 Twitter
 ```bash
-  https://developer.twitter.com/en/apps
+https://developer.twitter.com/en/apps
 ```
 ## Adding Other Providers
 
